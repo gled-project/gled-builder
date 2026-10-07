@@ -1,0 +1,25 @@
+# Written by autoconf and configure.
+/configure
+/config.log
+/config.status
+/autom4te.cache/
+/GledBuildConf.pm
+/MakeBuildConf.inc
+
+# Source tarballs and the default install prefix.
+/cache/
+/install/
+
+# Written by the external recipes.
+/external/*/*
+!/external/*/Makefile
+!/external/*/*.pl
+!/external/*/*.sh
+
+# The gled and gled-hep clones and the stamps of their build steps.
+/gled/gled/
+/gled/gled-hep/
+/gled/checkout
+/gled/configure
+/gled/build
+/gled/install

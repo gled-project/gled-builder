@@ -1,0 +1,28 @@
+gled-builder
+Copyright (C) 2008-2026 Matevz Tadel.
+
+gled-builder is free software: you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+gled-builder is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+for more details.
+
+The GNU Lesser General Public License, version 3, is in COPYING.LESSER. It
+supplements the GNU General Public License, version 3, which is in COPYING.
+
+Third-party files in this repository keep their own terms:
+
+  config.guess, config.sub
+      From GNU config, Copyright (C) 1992-2008 Free Software Foundation,
+      Inc. GNU General Public License, version 2 or later, with the
+      Autoconf exception; see the notice in the files.
+  install-sh
+      Copyright (C) 1994 X Consortium. X11 license; see the notice in the
+      file.
+
+The packages that gled-builder downloads and builds keep their own
+licenses.
