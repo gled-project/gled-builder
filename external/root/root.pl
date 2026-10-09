@@ -37,10 +37,7 @@ my @cmake_args =
    # Gled needs the GL renderers and the FLTK-side GUI, nothing from tmva.
    "-Dopengl=ON",
    "-Dtmva=OFF",
-   # 6.40 hard-errors on missing GIF/LZ4 rather than falling back, and Fedora
-   # does not ship giflib-devel / lz4-devel by default.  Opt in to the builtins
-   # so the external stays self-contained -- this matches how the reference
-   # ROOT build on this box is configured.
+   # 6.40 fails without GIF/LZ4 development packages; use the builtins.
    "-Dbuiltin_gif=ON",
    "-Dbuiltin_lz4=ON",
   );
@@ -67,8 +64,5 @@ target('install', <<"FNORD");
 cmake --install $builddir
 FNORD
 
-# Note: the 5.x recipe also copied graf3d/ftgl/inc/*.h into
-# \${PREFIX}/root/include/Rftgl.  ROOT dropped its in-tree FTGL after 6.30 and
-# its builtin is now vanilla upstream 2.4.0, which lacks the fade-out Render()
-# GledCore/Rnr/GL needs; GledCore carries ROOT's fork itself, in
-# Rnr/GL/FTGL.h and FTGL.cxx.
+# GledCore carries its own FTGL (Rnr/GL/FTGL.{h,cxx}); ROOT's is no longer
+# installed for it.
