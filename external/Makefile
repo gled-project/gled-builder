@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 
-PACKAGES := root fltk ftgl DevIL gts openal freealut
+PACKAGES := root fltk DevIL gts openal freealut
 
 all: ${PACKAGES}
 
@@ -28,7 +28,7 @@ Tmp1:     GledCore Geom1 GledGTS
 
 # Dependencies of libsets on external software
 
-GledCore: root fltk ftgl
+GledCore: root fltk
 Geom1:    DevIL
 Audio1:   openal freealut
 GledGTS:  gts

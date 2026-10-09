@@ -15,7 +15,6 @@ tarballs:
 |---|---|---|
 | root | 6.40.04-gled (the v6-40-04 tag without docs) | GledCore |
 | fltk | 1.3.6 | GledCore |
-| ftgl | 2.1.2-gled (ROOT 6.28's FTGL, built static) | GledCore |
 | DevIL | 1.7.4 | Geom1 |
 | gts | 0.7.7-gled (a 2008 snapshot) | GledGTS |
 | openal | 1.23.1 | Audio1 |

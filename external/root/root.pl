@@ -31,7 +31,7 @@ my @cmake_args =
    # Gled is built with root-config --cflags, so the standard has to be the
    # one ROOT itself was compiled with.
    "-DCMAKE_CXX_STANDARD=20",
-   # Was '--disable-builtin-freetype'; Gled's own ftgl external links the
+   # Was '--disable-builtin-freetype'; the FTGL in GledCore links the
    # system freetype and the two must agree.
    "-Dbuiltin_freetype=OFF",
    # Gled needs the GL renderers and the FLTK-side GUI, nothing from tmva.
@@ -70,4 +70,5 @@ FNORD
 # Note: the 5.x recipe also copied graf3d/ftgl/inc/*.h into
 # \${PREFIX}/root/include/Rftgl.  ROOT dropped its in-tree FTGL after 6.30 and
 # its builtin is now vanilla upstream 2.4.0, which lacks the fade-out Render()
-# GledCore/Rnr/GL needs -- see the separate 'ftgl' external.
+# GledCore/Rnr/GL needs; GledCore carries ROOT's fork itself, in
+# Rnr/GL/FTGL.h and FTGL.cxx.
