@@ -71,7 +71,7 @@ ${PREFIX}:
 	mkdir -p ${PREFIX}
 
 ${PREFIX}/lib64: ${PREFIX}
-	${ECHO} -I- Sym-linking lib to lib64 (for openal)
+	${ECHO} -I- Sym-linking lib to lib64, for openal
 	${MUTE} cd ${PREFIX}; ln -s lib lib64
 
 install: build ${PREFIX} ${PREFIX}/lib64
