@@ -29,8 +29,8 @@ my @cmake_args =
    "-DCMAKE_INSTALL_PREFIX=\${PREFIX}/root",
    "-DCMAKE_BUILD_TYPE=" . ($ROOT_GLED_DEBUG ? "Debug" : "RelWithDebInfo"),
    # Gled is built with root-config --cflags, so the standard has to be the
-   # one ROOT itself was compiled with.
-   "-DCMAKE_CXX_STANDARD=20",
+   # one ROOT itself was compiled with; GledGTS's gts-cxx needs C++23.
+   "-DCMAKE_CXX_STANDARD=23",
    # Was '--disable-builtin-freetype'; the FTGL in GledCore links the
    # system freetype and the two must agree.
    "-Dbuiltin_freetype=OFF",
