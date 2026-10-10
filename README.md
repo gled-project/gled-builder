@@ -8,15 +8,15 @@ repository).
 
 ## Externals
 
-The recipes in `external/<package>/` build these packages from source
-tarballs:
+The recipes in `external/<package>/` build these packages, all but gts-cxx
+from source tarballs:
 
 | package | version in the cache | needed by |
 |---|---|---|
 | root | 6.40.04-gled (the v6-40-04 tag without docs) | GledCore |
 | fltk | 1.3.6 | GledCore |
 | DevIL | 1.7.4 | Geom1 |
-| gts | 0.7.7-gled (a 2008 snapshot) | GledGTS |
+| gts-cxx | cloned from `GTS_CXX_REPO` (the C++ rewrite of GTS; needs GCC 15) | GledGTS |
 | openal | 1.23.1 | Audio1 |
 | freealut | 1.1.0-gled | Audio1 |
 
@@ -47,6 +47,7 @@ the prefix, by default `install/` here. The variables, also listed by
 | `LIBSETS` | `GledCore Audio1 GledGTS Geom1 Numerica Var1` | libsets to build, with their dependencies |
 | `GLED_REPO`, `GLED_REF` | the GitHub repository, `main` | where to clone gled from |
 | `GLED_HEP_REPO`, `GLED_HEP_REF` | empty, `main` | when set, gled-hep is cloned into `gled/gled-hep` and put on the libset path |
+| `GTS_CXX_REPO`, `GTS_CXX_REF` | the GitHub repository, `main` | where to clone gts-cxx from; a local path works too |
 | `CACHE_DIR`, `CACHE_URL`, `CACHE_TAG` | `cache/`, the rsync server, `HEAD` | source tarballs |
 | `MAKE_J_OPT` | `-j4` | parallel build |
 | `ROOT_GLED_DEBUG` | empty | when set, ROOT and gled are built for debugging |
@@ -69,8 +70,8 @@ Smaller steps:
 make external            # externals of the selected libsets
 make external-all        # all externals
 make external-no-root    # all externals but ROOT
-make -C external gts     # one package, with its dependencies
-make -C external/gts unpack | configure | build | install
+make -C external gts-cxx # one package, with its dependencies
+make -C external/gts-cxx checkout | build | install
 make -C gled checkout | configure | build | install
 make -C gled update      # git pull; then make rebuilds
 ```

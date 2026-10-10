@@ -1,6 +1,6 @@
 SHELL = /bin/bash
 
-PACKAGES := root fltk DevIL gts openal freealut
+PACKAGES := root fltk DevIL gts-cxx openal freealut
 
 all: ${PACKAGES}
 
@@ -31,7 +31,7 @@ Tmp1:     GledCore Geom1 GledGTS
 GledCore: root fltk
 Geom1:    DevIL
 Audio1:   openal freealut
-GledGTS:  gts
+GledGTS:  gts-cxx
 
 
 .PHONY: ${PACKAGES} ${LIBSETS} all all-but-root

@@ -69,6 +69,14 @@ AC_ARG_CONF_VAR([GLED_HEP_REF],
                 [gled-hep branch or tag to check out],
 		["main"])
 
+AC_ARG_CONF_VAR([GTS_CXX_REPO],
+                [gts-cxx git repository],
+		["https://github.com/gled-project/gts-cxx.git"])
+
+AC_ARG_CONF_VAR([GTS_CXX_REF],
+                [gts-cxx branch or tag to check out],
+		["main"])
+
 AC_ARG_CONF_VAR([LIBSETS],
                 [Gled libsets to build (space separated; dependencies are not checked)],
 		["GledCore Audio1 GledGTS Geom1 Numerica Var1"])
