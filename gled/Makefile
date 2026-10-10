@@ -39,7 +39,7 @@ endif
 define configure-cmds
 ln -sfn ${PREFIX} external;\
 . binenv.sh;\
-./configure --blobdir=${PREFIX} --external=${PREFIX} ${CONFIG_FLAGS} --nossl
+./configure --blobdir=${PREFIX} --external=${PREFIX} ${CONFIG_FLAGS}
 endef
 
 configure: checkout
